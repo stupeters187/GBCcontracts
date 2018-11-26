@@ -3,7 +3,7 @@ var Token = artifacts.require("./Token.sol");
 contract('Token - constructor', (accounts) => {
   it("should create a total supply equal to the argument given", async() => {
     tokenContract = await Token.deployed();
-    totalSupply = await tokenContract.totalSupply()
+    totalSupply = await tokenContract.totalSupply();
     assert.equal(totalSupply, 1000);
   });
 

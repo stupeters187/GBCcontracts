@@ -21,6 +21,13 @@ contract Token {
     return true;
   }
 
+  function mint(uint _amount) public returns (bool) {
+    require(msg.sender == owner);
+    totalSupply += _amount;
+    balances[owner] += _amount;
+    return true;
+  }
+
   function balanceOf(address _owner) public view returns (uint) {
     return balances[_owner];
   }
